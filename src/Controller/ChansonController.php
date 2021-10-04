@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\Chanson;
-use App\Form\ChansonType;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use App\Entity\Chanson;
+use App\Form\ChansonType;
 /**
  * @Route("/chanson")
  */
