@@ -14,7 +14,9 @@ class ClientType extends AbstractType
         $builder
             ->add('prenom')
             ->add('nom')
-            ->add('datenaissance')
+            ->add('datenaissance',BirthdayType::class, array(
+                'format' => 'dd-MM-yyyy')
+               )
             ->add('adresse')
             ->add('email')
             ->add('telephone')
