@@ -16,7 +16,6 @@ class ChansonType extends AbstractType
             ->add('nomAlbum')
             ->add('duree')
             ->add('genre')
-            ->add('idChanteur')
         ;
     }
 

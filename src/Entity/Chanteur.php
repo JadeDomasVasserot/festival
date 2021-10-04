@@ -24,9 +24,9 @@ class Chanteur
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_scene", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="nomScene", type="text", length=65535, nullable=false)
      */
-    private $nomScene;
+    private $nomscene;
 
     /**
      * @var string
@@ -45,9 +45,9 @@ class Chanteur
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_naissance", type="date", nullable=false)
+     * @ORM\Column(name="dateNaissance", type="date", nullable=false)
      */
-    private $dateNaissance;
+    private $datenaissance;
 
     /**
      * @var string
@@ -61,14 +61,14 @@ class Chanteur
         return $this->id;
     }
 
-    public function getNomScene(): ?string
+    public function getNomscene(): ?string
     {
-        return $this->nomScene;
+        return $this->nomscene;
     }
 
-    public function setNomScene(string $nomScene): self
+    public function setNomscene(string $nomscene): self
     {
-        $this->nomScene = $nomScene;
+        $this->nomscene = $nomscene;
 
         return $this;
     }
@@ -97,14 +97,14 @@ class Chanteur
         return $this;
     }
 
-    public function getDateNaissance(): ?\DateTime
-       {
-        return $this->dateNaissance;
+    public function getDatenaissance(): ?\DateTimeInterface
+    {
+        return $this->datenaissance;
     }
 
-    public function setDateNaissance(\DateTime $dateNaissance): self
+    public function setDatenaissance(\DateTimeInterface $datenaissance): self
     {
-        $this->dateNaissance = $dateNaissance;
+        $this->datenaissance = $datenaissance;
 
         return $this;
     }
@@ -120,6 +120,9 @@ class Chanteur
 
         return $this;
     }
-
+    public function __toString()
+    {
+        return $this->id.'-'.$this->nomscene;
+    }
 
 }

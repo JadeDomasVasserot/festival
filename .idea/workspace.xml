@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22a0ef70-7755-4a7b-9186-308d8c7503f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Chanson.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Chanson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChansonChanteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChansonChanteur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Chanteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Chanteur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ChanteurFestival.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChanteurFestival.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ClientFestival.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ClientFestival.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Festival.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Festival.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChansonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChansonType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChanteurType copy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChanteurType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChanteurType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ClientType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ClientType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -173,10 +185,23 @@
       <option name="presentableId" value="Default" />
       <updated>1633339609503</updated>
       <workItem from="1633339612687" duration="2757000" />
+      <workItem from="1633384445133" duration="35000" />
+      <workItem from="1633384481013" duration="1769000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

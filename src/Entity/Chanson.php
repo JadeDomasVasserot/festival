@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Chanson
  *
- * @ORM\Table(name="chanson", indexes={@ORM\Index(name="IdChanteurFk_Chanson", columns={"id_chanteur"})})
+ * @ORM\Table(name="chanson")
  * @ORM\Entity
  */
 class Chanson
@@ -24,16 +24,16 @@ class Chanson
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_chanson", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="nomChanson", type="text", length=65535, nullable=false)
      */
-    private $nomChanson;
+    private $nomchanson;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_album", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="nomAlbum", type="text", length=65535, nullable=false)
      */
-    private $nomAlbum;
+    private $nomalbum;
 
     /**
      * @var \DateTime
@@ -49,41 +49,31 @@ class Chanson
      */
     private $genre;
 
-    /**
-     * @var \Chanteur
-     *
-     * @ORM\ManyToOne(targetEntity="Chanteur")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_chanteur", referencedColumnName="id")
-     * })
-     */
-    private $idChanteur;
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNomChanson(): ?string
+    public function getNomchanson(): ?string
     {
-        return $this->nomChanson;
+        return $this->nomchanson;
     }
 
-    public function setNomChanson(string $nomChanson): self
+    public function setNomchanson(string $nomchanson): self
     {
-        $this->nomChanson = $nomChanson;
+        $this->nomchanson = $nomchanson;
 
         return $this;
     }
 
-    public function getNomAlbum(): ?string
+    public function getNomalbum(): ?string
     {
-        return $this->nomAlbum;
+        return $this->nomalbum;
     }
 
-    public function setNomAlbum(string $nomAlbum): self
+    public function setNomalbum(string $nomalbum): self
     {
-        $this->nomAlbum = $nomAlbum;
+        $this->nomalbum = $nomalbum;
 
         return $this;
     }
@@ -111,18 +101,9 @@ class Chanson
 
         return $this;
     }
-
-    public function getIdChanteur(): ?Chanteur
+    public function __toString()
     {
-        return $this->idChanteur;
+        return $this->id.'-'.$this->nomchanson;
     }
-
-    public function setIdChanteur(?Chanteur $idChanteur): self
-    {
-        $this->idChanteur = $idChanteur;
-
-        return $this;
-    }
-
 
 }

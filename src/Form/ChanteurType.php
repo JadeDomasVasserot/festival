@@ -21,7 +21,12 @@ class ChanteurType extends AbstractType
             ->add('dateNaissance',BirthdayType::class, array(
             'format' => 'dd-MM-yyyy')
            )
-            ->add('sexe')
+            ->add('sexe',ChoiceType::class, [
+                'choices'  => [
+                    'Homme' => 'H',
+                    'Femme' => 'F'
+                ]
+            ])
         ;
 
     }
