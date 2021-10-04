@@ -2,17 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22a0ef70-7755-4a7b-9186-308d8c7503f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChansonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChansonType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ChanteurType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChanteurType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ClientType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ClientType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/FestivalType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/FestivalType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/chanteur/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur/_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -162,7 +171,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -173,6 +189,11 @@
       <option name="presentableId" value="Default" />
       <updated>1633339609503</updated>
       <workItem from="1633339612687" duration="2757000" />
+      <workItem from="1633356871460" duration="799000" />
+      <workItem from="1633357732956" duration="89000" />
+      <workItem from="1633357829803" duration="779000" />
+      <workItem from="1633368038989" duration="620000" />
+      <workItem from="1633369062497" duration="2994000" />
     </task>
     <servers />
   </component>
