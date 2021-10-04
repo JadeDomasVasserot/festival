@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ChansonChanteur{% endblock %}
+
+{% block body %}
+    <h1>ChansonChanteur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chanson_chanteur.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('chanson_chanteur_index') }}">back to list</a>
+
+    <a href="{{ path('chanson_chanteur_edit', {'id': chanson_chanteur.id}) }}">edit</a>
+
+    {{ include('chanson_chanteur/_delete_form.html.twig') }}
+{% endblock %}

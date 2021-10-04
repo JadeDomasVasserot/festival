@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chanteur{% endblock %}
+
+{% block body %}
+    <h1>Chanteur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chanteur.id }}</td>
+            </tr>
+            <tr>
+                <th>NomScene</th>
+                <td>{{ chanteur.nomScene }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ chanteur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ chanteur.nom }}</td>
+            </tr>
+            <tr>
+                <th>DateNaissance</th>
+                <td>{{ chanteur.dateNaissance ? chanteur.dateNaissance|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ chanteur.sexe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('chanteur_index') }}">back to list</a>
+
+    <a href="{{ path('chanteur_edit', {'id': chanteur.id}) }}">edit</a>
+
+    {{ include('chanteur/_delete_form.html.twig') }}
+{% endblock %}
