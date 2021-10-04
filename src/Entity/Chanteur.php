@@ -43,9 +43,9 @@ class Chanteur
     private $nom;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="date_naissance", type="datetime", nullable=false)
+     * @ORM\Column(name="date_naissance", type="date", nullable=false)
      */
     private $dateNaissance;
 
@@ -97,12 +97,12 @@ class Chanteur
         return $this;
     }
 
-    public function getDateNaissance(): ?\DateTimeInterface
-    {
+    public function getDateNaissance(): ?\Date
+       {
         return $this->dateNaissance;
     }
 
-    public function setDateNaissance(\DateTimeInterface $dateNaissance): self
+    public function setDateNaissance(\Date $dateNaissance): self
     {
         $this->dateNaissance = $dateNaissance;
 
