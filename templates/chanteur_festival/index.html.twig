@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ChanteurFestival index{% endblock %}
+
+{% block body %}
+    <h1>ChanteurFestival index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chanteur_festival in chanteur_festivals %}
+            <tr>
+                <td>{{ chanteur_festival.id }}</td>
+                <td>
+                    <a href="{{ path('chanteur_festival_show', {'id': chanteur_festival.id}) }}">show</a>
+                    <a href="{{ path('chanteur_festival_edit', {'id': chanteur_festival.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('chanteur_festival_new') }}">Create new</a>
+{% endblock %}

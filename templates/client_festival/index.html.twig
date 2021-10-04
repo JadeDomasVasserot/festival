@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClientFestival index{% endblock %}
+
+{% block body %}
+    <h1>ClientFestival index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client_festival in client_festivals %}
+            <tr>
+                <td>{{ client_festival.id }}</td>
+                <td>
+                    <a href="{{ path('client_festival_show', {'id': client_festival.id}) }}">show</a>
+                    <a href="{{ path('client_festival_edit', {'id': client_festival.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('client_festival_new') }}">Create new</a>
+{% endblock %}

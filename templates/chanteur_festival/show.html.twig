@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ChanteurFestival{% endblock %}
+
+{% block body %}
+    <h1>ChanteurFestival</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chanteur_festival.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('chanteur_festival_index') }}">back to list</a>
+
+    <a href="{{ path('chanteur_festival_edit', {'id': chanteur_festival.id}) }}">edit</a>
+
+    {{ include('chanteur_festival/_delete_form.html.twig') }}
+{% endblock %}
