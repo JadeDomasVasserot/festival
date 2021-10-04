@@ -43,7 +43,7 @@ class Chanteur
     private $nom;
 
     /**
-     * @var \Date
+     * @var \DateTime
      *
      * @ORM\Column(name="date_naissance", type="date", nullable=false)
      */
@@ -97,12 +97,12 @@ class Chanteur
         return $this;
     }
 
-    public function getDateNaissance(): ?\Date
+    public function getDateNaissance(): ?\DateTime
        {
         return $this->dateNaissance;
     }
 
-    public function setDateNaissance(\Date $dateNaissance): self
+    public function setDateNaissance(\DateTime $dateNaissance): self
     {
         $this->dateNaissance = $dateNaissance;
 
