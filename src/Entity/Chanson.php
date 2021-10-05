@@ -50,14 +50,12 @@ class Chanson
     private $genre;
 
     /**
-     * @var \Chanteur
+     * @var int
      *
-     * @ORM\ManyToOne(targetEntity="Chanteur")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_chanteur", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="id_chanteur", type="integer", nullable=false)
      */
     private $idChanteur;
+    
 
     public function getId(): ?int
     {
@@ -112,12 +110,12 @@ class Chanson
         return $this;
     }
 
-    public function getIdChanteur(): ?Chanteur
+    public function getIdChanteur(): ?int
     {
         return $this->idChanteur;
     }
 
-    public function setIdChanteur(?Chanteur $idChanteur): self
+    public function setIdChanteur(?int $idChanteur): self
     {
         $this->idChanteur = $idChanteur;
 

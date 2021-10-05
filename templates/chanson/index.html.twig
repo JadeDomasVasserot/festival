@@ -1,4 +1,3 @@
-
 {% block body %}
     <h1>Chanson index</h1>
 
@@ -22,8 +21,8 @@
                 <td>{{ chanson.duree ? chanson.duree|date('H:i:s') : '' }}</td>
                 <td>{{ chanson.genre }}</td>
                 <td>
-                    <a href="{{ path('chanson_show', {'id': chanson.id}) }}">show</a>
-                    <a href="{{ path('chanson_edit', {'id': chanson.id}) }}">edit</a>
+                    <a href="{{ path('chanson_show', {'id': chanson.id}) }}">Voir</a>
+                    <a href="{{ path('chanson_edit', {'id': chanson.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -34,5 +33,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('chanson_new') }}">Create new</a>
+    <a href="{{ path('chanson_new') }}">Créer une chanson</a>
+
 {% endblock %}

@@ -22,7 +22,7 @@ class ChansonChanteur
     private $id;
 
     /**
-     * @var \Chanson
+     * @var int
      *
      * @ORM\ManyToOne(targetEntity="Chanson")
      * @ORM\JoinColumns({
@@ -32,7 +32,7 @@ class ChansonChanteur
     private $idchanson;
 
     /**
-     * @var \Chanteur
+     * @var int
      *
      * @ORM\ManyToOne(targetEntity="Chanteur")
      * @ORM\JoinColumns({
@@ -46,7 +46,7 @@ class ChansonChanteur
         return $this->id;
     }
 
-    public function getIdchanson(): ?Chanson
+    public function getIdchanson(): ?int
     {
         return $this->idchanson;
     }
@@ -58,7 +58,7 @@ class ChansonChanteur
         return $this;
     }
 
-    public function getIdchanteur(): ?Chanteur
+    public function getIdchanteur(): ?int
     {
         return $this->idchanteur;
     }
