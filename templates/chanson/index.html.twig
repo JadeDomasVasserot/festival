@@ -36,3 +36,40 @@
 
     <a href="{{ path('chanson_new') }}">Create new</a>
 {% endblock %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Index</title><!-- <link href="" rel="stylesheet" media="all"> -->
+</head>
+<body>
+<!-- Chanson -->
+<h1>
+    Bienvenue,
+</h1>
+<h2>
+    <a href="{{path ('chanson_index')}}">Chanson</a>
+    Pour modifier, ajouter ou suprimer un élément veuillez vous rendre dans la catégorie souhaité
+</h2>
+
+<h3>
+    <a href="{{path ('chanson_index')}}">Chanson</a>
+</h3>
+
+<h3>
+    <a href="{{path ('chanteur_index')}}">Chanteur</a>
+</h3>
+
+<h3>
+    <a href="{{path ('chanson_new')}}"> Ajouter une chanson</a>
+    <a href="{{path ('client_index')}}">Client</a>
+</h3>
+
+<h3>
+    <a href="{{path ('festival_index')}}">Festival</a>
+</h3>
+
+
+
+</body>
+</html>
