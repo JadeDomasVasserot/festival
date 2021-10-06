@@ -194,7 +194,6 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -204,8 +203,5 @@
         </entry>
       </map>
     </option>
-
-    <option name="oldMeFiltersMigrated" value="true" />
-
   </component>
 </project>
