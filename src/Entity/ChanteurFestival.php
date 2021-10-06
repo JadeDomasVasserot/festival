@@ -22,22 +22,16 @@ class ChanteurFestival
     private $id;
 
     /**
-     * @var \Chanteur
+     * @var int
      *
-     * @ORM\ManyToOne(targetEntity="Chanteur")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idChanteur", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="idChanteur", type="integer", nullable=false)
      */
     private $idchanteur;
 
     /**
-     * @var \Festival
-     *
-     * @ORM\ManyToOne(targetEntity="Festival")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idFestival", referencedColumnName="id")
-     * })
+     * @var int
+     * 
+     * @ORM\Column(name="idFestival", type="integer", nullable=false)
      */
     private $idfestival;
 
@@ -46,24 +40,24 @@ class ChanteurFestival
         return $this->id;
     }
 
-    public function getIdchanteur(): ?Chanteur
+    public function getIdchanteur(): ?int
     {
         return $this->idchanteur;
     }
 
-    public function setIdchanteur(?Chanteur $idchanteur): self
+    public function setIdchanteur(?int $idchanteur): self
     {
         $this->idchanteur = $idchanteur;
 
         return $this;
     }
 
-    public function getIdfestival(): ?Festival
+    public function getIdfestival(): ?int
     {
         return $this->idfestival;
     }
 
-    public function setIdfestival(?Festival $idfestival): self
+    public function setIdfestival(?int $idfestival): self
     {
         $this->idfestival = $idfestival;
 

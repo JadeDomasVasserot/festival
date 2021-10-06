@@ -2,29 +2,91 @@
 {% block body %}
     <h1>ChanteurFestival index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for chanteur_festival in chanteur_festivals %}
-            <tr>
-                <td>{{ chanteur_festival.id }}</td>
-                <td>
-                    <a href="{{ path('chanteur_festival_show', {'id': chanteur_festival.id}) }}">show</a>
-                    <a href="{{ path('chanteur_festival_edit', {'id': chanteur_festival.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="2">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <h2>Chanteur deja inscrit</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for chanteur_festival in chanteur_festivals %}
+                <tr>
+                    <td>{{ chanteur_festival.id }}</td>
+                    <td>
+                        <a href="{{ path('chanteur_festival_show', {'id': chanteur_festival.id}) }}">show</a>
+                        <a href="{{ path('chanteur_festival_edit', {'id': chanteur_festival.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">aucun chanteur d'inscrit</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('chanteur_festival_new') }}">Create new</a>
+    <h2>Chanteur deja enregistrer</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>NomScene</th>
+                    <th>Prenom</th>
+                    <th>Nom</th>
+                    <th>DateNaissance</th>
+                    <th>Sexe</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for chanteur in chanteurs %}
+                <tr>
+                    <td>{{ chanteur.id }}</td>
+                    <td>{{ chanteur.nomScene }}</td>
+                    <td>{{ chanteur.prenom }}</td>
+                    <td>{{ chanteur.nom }}</td>
+                    <td>{{ chanteur.dateNaissance ? chanteur.dateNaissance|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ chanteur.sexe }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    <h2>Festival en approche</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nomfestival</th>
+                    <th>Datedebut</th>
+                    <th>Lieu</th>
+                    <th>Genre</th>
+                    <th>Nbplaces</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for festival in festivals %}
+                <tr>
+                    <td>{{ festival.id }}</td>
+                    <td>{{ festival.nomfestival }}</td>
+                    <td>{{ festival.datedebut ? festival.datedebut|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ festival.lieu }}</td>
+                    <td>{{ festival.genre }}</td>
+                    <td>{{ festival.nbplaces }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    
+
+    <a href="{{ path('chanteur_festival_new') }}">S'inscrire</a>
 {% endblock %}

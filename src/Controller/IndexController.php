@@ -15,4 +15,12 @@ class IndexController extends AbstractController
     {
         return $this->render('Index.html.twig') ;
     }
+
+    /**
+     * @Route("/inscription", name="inscription")
+     */
+    public function inscription(): Response
+    {
+        return $this->render('inscription.html.twig') ;
+    }
 }

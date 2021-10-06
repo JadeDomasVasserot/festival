@@ -1,29 +1,96 @@
 {% block body %}
     <h1>ClientFestival index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for client_festival in client_festivals %}
-            <tr>
-                <td>{{ client_festival.id }}</td>
-                <td>
-                    <a href="{{ path('client_festival_show', {'id': client_festival.id}) }}">show</a>
-                    <a href="{{ path('client_festival_edit', {'id': client_festival.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="2">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <h2>Client deja inscrit</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for client_festival in client_festivals %}
+                <tr>
+                    <td>{{ client_festival.id }}</td>
+                    <td>
+                        <a href="{{ path('client_festival_show', {'id': client_festival.id}) }}">show</a>
+                        <a href="{{ path('client_festival_edit', {'id': client_festival.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">Aucun client enregistrer</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('client_festival_new') }}">Create new</a>
+    <h2>Client deja enregistrer</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Prenom</th>
+                    <th>Nom</th>
+                    <th>Datenaissance</th>
+                    <th>Adresse</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                    <th>Sexe</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for client in clients %}
+                <tr>
+                    <td>{{ client.id }}</td>
+                    <td>{{ client.prenom }}</td>
+                    <td>{{ client.nom }}</td>
+                    <td>{{ client.datenaissance ? client.datenaissance|date('Y-m-d') : '' }}</td>
+                    <td>{{ client.adresse }}</td>
+                    <td>{{ client.email }}</td>
+                    <td>{{ client.telephone }}</td>
+                    <td>{{ client.sexe }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    <h2>Festival en approche</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nomfestival</th>
+                    <th>Datedebut</th>
+                    <th>Lieu</th>
+                    <th>Genre</th>
+                    <th>Nbplaces</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for festival in festivals %}
+                <tr>
+                    <td>{{ festival.id }}</td>
+                    <td>{{ festival.nomfestival }}</td>
+                    <td>{{ festival.datedebut ? festival.datedebut|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ festival.lieu }}</td>
+                    <td>{{ festival.genre }}</td>
+                    <td>{{ festival.nbplaces }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    
+    <div class="inscription">
+        <a href="{{ path('client_festival_new') }}">S'inscrire</a>
+    </div>
 {% endblock %}

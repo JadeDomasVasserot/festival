@@ -8,9 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Client;
+use App\Entity\Festival;
 
 /**
- * @Route("/client/festival")
+ * @Route("/clientFestival")
  */
 class ClientFestivalController extends AbstractController
 {
@@ -23,8 +25,18 @@ class ClientFestivalController extends AbstractController
             ->getRepository(ClientFestival::class)
             ->findAll();
 
+        $clients = $this->getDoctrine()
+            ->getRepository(Client::class)
+            ->findAll();
+
+        $festivals = $this->getDoctrine()
+            ->getRepository(Festival::class)
+            ->findAll();
+
         return $this->render('client_festival/index.html.twig', [
             'client_festivals' => $clientFestivals,
+            'clients' => $clients,
+            'festivals' => $festivals,
         ]);
     }
 
