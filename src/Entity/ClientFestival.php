@@ -22,16 +22,22 @@ class ClientFestival
     private $id;
 
     /**
-     * @var int
+     * @var \Client
      *
-     * @ORM\Column(name="idClient", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Client")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idClient", referencedColumnName="id")
+     * })
      */
     private $idclient;
 
     /**
-     * @var int
+     * @var \Festival
      *
-     * @ORM\Column(name="idFestival", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Festival")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idFestival", referencedColumnName="id")
+     * })
      */
     private $idfestival;
 
@@ -40,24 +46,24 @@ class ClientFestival
         return $this->id;
     }
 
-    public function getIdclient(): ?int
+    public function getIdclient(): ?Client
     {
         return $this->idclient;
     }
 
-    public function setIdclient(?int $idclient): self
+    public function setIdclient(?Client $idclient): self
     {
         $this->idclient = $idclient;
 
         return $this;
     }
 
-    public function getIdfestival(): ?int
+    public function getIdfestival(): ?Festival
     {
         return $this->idfestival;
     }
 
-    public function setIdfestival(?int $idfestival): self
+    public function setIdfestival(?Festival $idfestival): self
     {
         $this->idfestival = $idfestival;
 
