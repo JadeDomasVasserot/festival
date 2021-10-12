@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22a0ef70-7755-4a7b-9186-308d8c7503f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChanteurFestival.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChanteurFestival.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ClientFestival.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ClientFestival.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/InscriptionRapide.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/InscriptionRapide.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ChanteurType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChanteurType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ClientType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ClientType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson_chanteur/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson_chanteur/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson_chanteur/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson_chanteur/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur_festival/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur_festival/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur_festival/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur_festival/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client_festival/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client_festival/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client_festival/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client_festival/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inscription.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/inscriptionRapide.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inscriptionRapide.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +181,7 @@
       <updated>1633339609503</updated>
       <workItem from="1633339612687" duration="2757000" />
       <workItem from="1634051610919" duration="9000" />
-      <workItem from="1634051621333" duration="8101000" />
+      <workItem from="1634051621333" duration="9999000" />
     </task>
     <servers />
   </component>
