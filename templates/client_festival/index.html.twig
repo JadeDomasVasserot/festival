@@ -5,18 +5,23 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>actions</th>
+                    <th>Id de la table d'association</th>
+                    <th>Id Client</th>
+                    <th>Id Festival</th>
+                    <th>Voir</th>
+                    <th>Modifier</th>
                 </tr>
             </thead>
             <tbody>
             {% for client_festival in client_festivals %}
                 <tr>
                     <td>{{ client_festival.id }}</td>
-                    <td>
-                        <a href="{{ path('client_festival_show', {'id': client_festival.id}) }}">show</a>
-                        <a href="{{ path('client_festival_edit', {'id': client_festival.id}) }}">edit</a>
-                    </td>
+                    <td>{{ client_festival.idclient }}</td>
+                    <td>{{ client_festival.idfestival }}</td>
+                    <td>{{ client_festival.id }}</td>
+                    <td><a href="{{ path('client_festival_show', {'id': client_festival.id}) }}">show</a></td>
+                    <td><a href="{{ path('client_festival_edit', {'id': client_festival.id}) }}">edit</a></td>
+
                 </tr>
             {% else %}
                 <tr>

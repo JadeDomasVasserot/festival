@@ -8,7 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
-
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class ChanteurType extends AbstractType
 {
@@ -21,7 +21,12 @@ class ChanteurType extends AbstractType
             ->add('dateNaissance',BirthdayType::class, array(
             'format' => 'dd-MM-yyyy')
            )
-            ->add('sexe')
+            ->add('sexe', ChoiceType::class, [
+                'choices'  => [
+                    'Homme' => 'H',
+                    'Femme' => 'F'
+                ]
+            ])
         ;
 
     }

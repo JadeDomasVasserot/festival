@@ -6,18 +6,22 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>actions</th>
+                    <th>Id de la table d'association</th>
+                    <th>Id Chanteur</th>
+                    <th>Id Festival</th>
+                    <th>Voir</th>
+                    <th>Modifier</th>
                 </tr>
             </thead>
             <tbody>
             {% for chanteur_festival in chanteur_festivals %}
                 <tr>
                     <td>{{ chanteur_festival.id }}</td>
-                    <td>
-                        <a href="{{ path('chanteur_festival_show', {'id': chanteur_festival.id}) }}">show</a>
-                        <a href="{{ path('chanteur_festival_edit', {'id': chanteur_festival.id}) }}">edit</a>
-                    </td>
+                    <td>{{ chanteur_festival.idchanteur }}</td>
+                    <td>{{ chanteur_festival.idfestival }}</td>
+                    <td> <a href="{{ path('chanteur_festival_show', {'id': chanteur_festival.id}) }}">show</a>  </td>
+                    <td><a href="{{ path('chanteur_festival_edit', {'id': chanteur_festival.id}) }}">edit</a></td>
+
                 </tr>
             {% else %}
                 <tr>

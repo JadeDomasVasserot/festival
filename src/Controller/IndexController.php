@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,6 +13,9 @@ use App\Entity\InscriptionRapide;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use App\Entity\InscriptionRapide2;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 
 class IndexController extends AbstractController
 {
@@ -45,11 +49,18 @@ class IndexController extends AbstractController
         $form = $this->createFormBuilder($InscriptionRapide)
             ->add('prenom')
             ->add('nom')
-            ->add('datenaissance')
+            ->add('datenaissance',BirthdayType::class, array(
+                    'format' => 'dd-MM-yyyy')
+            )
             ->add('adresse')
-            ->add('email')
-            ->add('telephone')
-            ->add('sexe')
+            ->add('email', EmailType::class)
+            ->add('telephone', TelType::class)
+            ->add('sexe', ChoiceType::class, [
+                'choices'  => [
+                    'Homme' => 'H',
+                    'Femme' => 'F'
+                ]
+            ])
             ->add('Envoyer', SubmitType::class)
             ->getForm();
 
@@ -63,12 +74,12 @@ class IndexController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('inscriptionRapide2',
-            [ 'id' => $InscriptionRapide->getId()]);
+                [ 'id' => $InscriptionRapide->getId()]);
         }
 
         return $this->render('inscriptionRapide.html.twig',
             [ 'festivals' => $festivals
-             , 'form' => $form->createView()]);
+                , 'form' => $form->createView()]);
     }
 
     /**
@@ -97,13 +108,13 @@ class IndexController extends AbstractController
             $entityManager->persist($InscriptionInfos);
             $entityManager->flush();
 
-            return new Response ('Formulaire Valider') ;
+            return new Response ('Bravo, vous vous êtes inscrits ! Formulaire validé') ;
 
         }
 
         return $this->render('inscriptionRapide.html.twig',
             [ 'festivals' => $festivals
-             , 'form' => $form2->createView()]);
+                , 'form' => $form2->createView()]);
 
 
         return $this->render('inscription.html.twig') ;

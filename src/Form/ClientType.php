@@ -7,6 +7,9 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 
 class ClientType extends AbstractType
 {
@@ -16,12 +19,17 @@ class ClientType extends AbstractType
             ->add('prenom')
             ->add('nom')
             ->add('datenaissance',BirthdayType::class, array(
-                'format' => 'dd-MM-yyyy')
-               )
+                    'format' => 'dd-MM-yyyy')
+            )
             ->add('adresse')
-            ->add('email')
-            ->add('telephone')
-            ->add('sexe')
+            ->add('email', EmailType::class)
+            ->add('telephone', TelType::class)
+            ->add('sexe', ChoiceType::class, [
+                'choices'  => [
+                    'Homme' => 'H',
+                    'Femme' => 'F'
+                ]
+            ])
         ;
     }
 

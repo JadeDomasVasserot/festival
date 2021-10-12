@@ -6,17 +6,21 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>actions</th>
+                <th>Id de la chanson</th>
+                <th>Id du chanteur</th>
+                <th>Voir</th>
+                <th>Editer</th>
             </tr>
         </thead>
         <tbody>
         {% for chanson_chanteur in chanson_chanteurs %}
             <tr>
                 <td>{{ chanson_chanteur.id }}</td>
-                <td>
-                    <a href="{{ path('chanson_chanteur_show', {'id': chanson_chanteur.id}) }}">show</a>
-                    <a href="{{ path('chanson_chanteur_edit', {'id': chanson_chanteur.id}) }}">edit</a>
-                </td>
+                <td>{{ chanson_chanteur.idchanson }}</td>
+                <td>{{ chanson_chanteur.idchanteur }}</td>
+                <td> <a href="{{ path('chanson_chanteur_show', {'id': chanson_chanteur.id}) }}">show</a>  </td>
+                <td><a href="{{ path('chanson_chanteur_edit', {'id': chanson_chanteur.id}) }}">edit</a></td>
+
             </tr>
         {% else %}
             <tr>

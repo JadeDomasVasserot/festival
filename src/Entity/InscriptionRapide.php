@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * InscriptionRapide
  *
- * @ORM\Table(name="Client")
+ * @ORM\Table(name="client")
  * @ORM\Entity
  */
 class InscriptionRapide
@@ -69,12 +69,6 @@ class InscriptionRapide
      * @ORM\Column(name="sexe", type="text", length=65535, nullable=false)
      */
     private $sexe;
-
-    /**
-     * @var int
-     * 
-     * @ORM 
-     */
 
     public function getId(): ?int
     {

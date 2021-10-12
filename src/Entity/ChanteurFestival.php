@@ -46,7 +46,7 @@ class ChanteurFestival
         return $this->id;
     }
 
-    public function getIdchanteur(): ?Chanteur
+    public function getIdchanteur(): Chanteur
     {
         return $this->idchanteur;
     }
@@ -58,7 +58,7 @@ class ChanteurFestival
         return $this;
     }
 
-    public function getIdfestival(): ?Festival
+    public function getIdfestival(): Festival
     {
         return $this->idfestival;
     }

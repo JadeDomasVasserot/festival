@@ -9,7 +9,9 @@
                 <th>NomAlbum</th>
                 <th>Duree</th>
                 <th>Genre</th>
-                <th>actions</th>
+                <th>Voir</th>
+                <th>Modfier</th>
+
             </tr>
         </thead>
         <tbody>
@@ -20,10 +22,8 @@
                 <td>{{ chanson.nomAlbum }}</td>
                 <td>{{ chanson.duree ? chanson.duree|date('H:i:s') : '' }}</td>
                 <td>{{ chanson.genre }}</td>
-                <td>
-                    <a href="{{ path('chanson_show', {'id': chanson.id}) }}">Voir</a>
-                    <a href="{{ path('chanson_edit', {'id': chanson.id}) }}">Modifier</a>
-                </td>
+                <td><a href="{{ path('chanson_show', {'id': chanson.id}) }}">Voir</a></td>
+                <td> <a href="{{ path('chanson_edit', {'id': chanson.id}) }}">Modifier</a></td>
             </tr>
         {% else %}
             <tr>
