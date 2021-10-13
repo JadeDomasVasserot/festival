@@ -1,14 +1,17 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Tous les chanteurs inscrits à un festival</p>
+    <p>Chanteurs déjà inscrits</p>
+    <div class="table">
 
-{% block body %}
-    <h1>ChanteurFestival index</h1>
-
-    <h2>Chanteur deja inscrit</h2>
-        <table class="table">
+        <table >
             <thead>
                 <tr>
                     <th>Id de la table d'association</th>
-                    <th>Id Chanteur</th>
-                    <th>Id Festival</th>
+                    <th>Id + Chanteur (lien)</th>
+                    <th>Id + Festival(lien)</th>
                     <th>Voir</th>
                     <th>Modifier</th>
                 </tr>
@@ -17,10 +20,20 @@
             {% for chanteur_festival in chanteur_festivals %}
                 <tr>
                     <td>{{ chanteur_festival.id }}</td>
-                    <td>{{ chanteur_festival.idchanteur }}</td>
-                    <td>{{ chanteur_festival.idfestival }}</td>
-                    <td> <a href="{{ path('chanteur_festival_show', {'id': chanteur_festival.id}) }}">show</a>  </td>
-                    <td><a href="{{ path('chanteur_festival_edit', {'id': chanteur_festival.id}) }}">edit</a></td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('chanteur_show', {'id': chanteur_festival.idchanteur})}}">
+                        {{ chanteur_festival.idchanteur }}</a>
+                    </td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('festival_show', {'id':chanteur_festival.idfestival})}}">
+                            {{ chanteur_festival.idfestival }}</a>
+                        </td>
+                    <td>
+                        <a href="{{ path('chanteur_festival_show', {'id': chanteur_festival.id}) }}">Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('chanteur_festival_edit', {'id': chanteur_festival.id}) }}">Editer</a>
+                    </td>
 
                 </tr>
             {% else %}
@@ -30,9 +43,10 @@
             {% endfor %}
             </tbody>
         </table>
-
-    <h2>Chanteur deja enregistrer</h2>
-        <table class="table">
+    </div>
+    <p>Chanteurs déjà enregistrés</p>
+    <div class="table">
+        <table >
             <thead>
                 <tr>
                     <th>Id</th>
@@ -60,9 +74,10 @@
             {% endfor %}
             </tbody>
         </table>
-
-    <h2>Festival en approche</h2>
-        <table class="table">
+    </div>
+    <p>Festivals en approche</p>
+    <div class="table">
+        <table>
             <thead>
                 <tr>
                     <th>Id</th>
@@ -90,7 +105,12 @@
             {% endfor %}
             </tbody>
         </table>
-    
+    </div>
+</div>
+    <a href="{{ path('chanteur_festival_new') }}">
+    <div class="lien">
+        S'inscrire
 
-    <a href="{{ path('chanteur_festival_new') }}">S'inscrire</a>
-{% endblock %}
+    </div></a>
+
+</body>

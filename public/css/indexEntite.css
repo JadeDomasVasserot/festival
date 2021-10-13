@@ -1,0 +1,105 @@
+body
+ {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: blueviolet;
+    line-height: 20px;
+    cursor: pointer;
+}
+ a:hover{
+   
+    font-size: 20px;
+    transition-duration: 0.5s;
+}
+.lienSimple{
+    color:black;
+}
+body {
+    font-size: 14px;
+    font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+}
+.card-4 {
+    display: block;
+    justify-content: center;
+    background: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-top: 5%;
+
+
+}
+p {
+    font-size: 28px;
+    text-align: center;
+    padding: 30px;
+}
+.bg-gra-01 {
+    background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
+    background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+    background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+    background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+    background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
+}
+.table{
+    display: flex;
+    justify-content: center;
+
+}
+table {
+    border-collapse: collapse;
+    text-align: center;
+    width:100%;
+
+}
+td{
+    padding: 10px;
+    width:15%;
+}
+tr{
+    border-bottom: solid 2px #00000014;
+
+}
+.lien {
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+    background: #4272d7;
+    margin :30px 40% 30px 40%;
+    padding: 10px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    
+
+}
+a .lien{
+    color: white;
+ 
+}
+a .lien:hover{
+    font-size: 20px;
+ 
+}
+
+tbody tr:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+
+}
+

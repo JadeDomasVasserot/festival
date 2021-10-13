@@ -3,15 +3,23 @@
     <head>
         <meta charset="utf-8">
         <title>Index</title>
-        <!-- <link href="" rel="stylesheet" media="all"> -->
+        <link rel="stylesheet" type="text/css" href=" {{ asset('css/index.css')}}  ">
     </head>
     <body>
-            <ul>
-                <li> <a href="{{path ('chanson_index')}}">Chanson</a></li>
-                <li> <a href="{{path ('chanteur_index')}}">Chanteur</a></li>
-                <li><a href="{{path ('client_index')}}">Client</a></li>
-                <li><a href="{{path ('festival_index')}}">Festival</a></li>
-            </ul>
+        {{ include('nav.html.twig')}}
+            <div  class="para1">
+                <p>
+                <h1>
+                    Bienvenue,
+                </h1>
+                <h2>
+                    Ce site vous permet de vous inscrire à des festivals.
+                    <br>
+                    Vous pouvez modifier à souhait votre réservation.
+                </h2>
+                </p>
+            </div>
+        <div  class="para2">
             <h2>
                 Pour modifier, ajouter ou suprimer un élément veuillez vous rendre dans la catégorie souhaité 
             </h2>
@@ -27,8 +35,6 @@
             <h4>
                 <a href="{{path ('inscription')}}">Inscription Client et Chanteur</a>
             </h4>
-
-            
-
+        </div>
     </body>
 </html>

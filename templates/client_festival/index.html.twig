@@ -1,13 +1,16 @@
-{% block body %}
-    <h1>ClientFestival index</h1>
-
-    <h2>Client deja inscrit</h2>
-        <table class="table">
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Association entre client et festival</p>
+    <p>Clients déjà inscrits</p>
+    <div class="table">
+        <table>
             <thead>
                 <tr>
                     <th>Id de la table d'association</th>
-                    <th>Id Client</th>
-                    <th>Id Festival</th>
+                    <th>Id + Client (lien)</th>
+                    <th>Id + Festival (lien)</th>
                     <th>Voir</th>
                     <th>Modifier</th>
                 </tr>
@@ -16,23 +19,30 @@
             {% for client_festival in client_festivals %}
                 <tr>
                     <td>{{ client_festival.id }}</td>
-                    <td>{{ client_festival.idclient }}</td>
-                    <td>{{ client_festival.idfestival }}</td>
-                    <td>{{ client_festival.id }}</td>
-                    <td><a href="{{ path('client_festival_show', {'id': client_festival.id}) }}">show</a></td>
-                    <td><a href="{{ path('client_festival_edit', {'id': client_festival.id}) }}">edit</a></td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('client_show', {'id': client_festival.idclient})}}">
+                        {{ client_festival.idclient }}</a>
+                    </td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('festival_show', {'id': client_festival.idfestival})}}">
+                        {{client_festival.idfestival }}</a>
+                    </td>
+                    <td><a  href="{{ path('client_festival_show', {'id': client_festival.id}) }}">show</a></td>
+                    <td><a  href="{{ path('client_festival_edit', {'id': client_festival.id}) }}">edit</a></td>
 
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="2">Aucun client enregistrer</td>
+                    <td colspan="2">Aucun client enregistré</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+    </div>
 
-    <h2>Client deja enregistrer</h2>
-        <table class="table">
+    <p>Clients déjà enregistrés</p>
+    <div class="table">
+        <table>
             <thead>
                 <tr>
                     <th>Id</th>
@@ -64,9 +74,11 @@
             {% endfor %}
             </tbody>
         </table>
+    </div>
 
-    <h2>Festival en approche</h2>
-        <table class="table">
+    <p>Festival en approche</p>
+    <div class="table">
+        <table >
             <thead>
                 <tr>
                     <th>Id</th>
@@ -94,8 +106,11 @@
             {% endfor %}
             </tbody>
         </table>
-    
-    <div class="inscription">
-        <a href="{{ path('client_festival_new') }}">S'inscrire</a>
     </div>
-{% endblock %}
+</div>
+<a href="{{ path('client_festival_new') }}">
+    <div class="lien">
+       S'inscrire
+    </div>
+</a>
+</body>

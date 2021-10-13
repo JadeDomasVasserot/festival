@@ -1,38 +1,46 @@
-{% block body %}
-    <h1>Chanson index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>NomChanson</th>
-                <th>NomAlbum</th>
-                <th>Duree</th>
-                <th>Genre</th>
-                <th>Voir</th>
-                <th>Modfier</th>
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+{{ include('nav.html.twig')}}
+<body class="bg-gra-01">
+    <div class="card-4">
+        <p>Index de toutes les chansons</p>
+        <div class="table">
+            <table >
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>NomChanson</th>
+                        <th>NomAlbum</th>
+                        <th>Duree</th>
+                        <th>Genre</th>
+                        <th>Voir</th>
+                        <th>Modifier</th>
 
-            </tr>
-        </thead>
-        <tbody>
-        {% for chanson in chansons %}
-            <tr>
-                <td>{{ chanson.id }}</td>
-                <td>{{ chanson.nomChanson }}</td>
-                <td>{{ chanson.nomAlbum }}</td>
-                <td>{{ chanson.duree ? chanson.duree|date('H:i:s') : '' }}</td>
-                <td>{{ chanson.genre }}</td>
-                <td><a href="{{ path('chanson_show', {'id': chanson.id}) }}">Voir</a></td>
-                <td> <a href="{{ path('chanson_edit', {'id': chanson.id}) }}">Modifier</a></td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('chanson_new') }}">Créer une chanson</a>
-
-{% endblock %}
+                    </tr>
+                </thead>
+                <tbody>
+                {% for chanson in chansons %}
+                    <tr>
+                        <td>{{ chanson.id }}</td>
+                        <td>{{ chanson.nomChanson }}</td>
+                        <td>{{ chanson.nomAlbum }}</td>
+                        <td>{{ chanson.duree ? chanson.duree|date('H:i:s') : '' }}</td>
+                        <td> {{ chanson.genre }}</td>
+                        <td><a href="{{ path('chanson_show', {'id': chanson.id}) }}">Voir </a></td>
+                        <td> <a href="{{ path('chanson_edit', {'id': chanson.id}) }}">Modifier</a></td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="{{ path('chanson_new') }}" >
+    <div class="lien">
+   Créer une chanson
+    </div>
+    </a>
+</body>

@@ -1,7 +1,10 @@
-{% block body %}
-    <h1>Festival index</h1>
-
-    <table class="table">
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Index de tous les chanteurs</p>
+    <div class="table">
+    <table>
         <thead>
             <tr>
                 <th>Id</th>
@@ -10,7 +13,8 @@
                 <th>Lieu</th>
                 <th>Genre</th>
                 <th>Nbplaces</th>
-                <th>actions</th>
+                <th>Voir</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
@@ -22,10 +26,9 @@
                 <td>{{ festival.lieu }}</td>
                 <td>{{ festival.genre }}</td>
                 <td>{{ festival.nbplaces }}</td>
-                <td>
-                    <a href="{{ path('festival_show', {'id': festival.id}) }}">show</a>
-                    <a href="{{ path('festival_edit', {'id': festival.id}) }}">edit</a>
-                </td>
+                <td> <a href="{{ path('festival_show', {'id': festival.id}) }}">show</a></td>
+               <td><a href="{{ path('festival_edit', {'id': festival.id}) }}">edit</a></td>
+
             </tr>
         {% else %}
             <tr>
@@ -34,6 +37,10 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
+</div>
 
-    <a href="{{ path('festival_new') }}">Create new</a>
-{% endblock %}
+<a href="{{ path('festival_new') }}">
+    <div class="lien">Créer un festival </div>
+</a>
+</body>

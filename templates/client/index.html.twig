@@ -1,7 +1,10 @@
-{% block body %}
-    <h1>Client index</h1>
-
-    <table class="table">
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Index de tous les chanteurs</p>
+    <div class="table">
+    <table >
         <thead>
             <tr>
                 <th>Id</th>
@@ -12,7 +15,8 @@
                 <th>Email</th>
                 <th>Telephone</th>
                 <th>Sexe</th>
-                <th>actions</th>
+                <th>Voir</th>
+                <th>Editer</th>
             </tr>
         </thead>
         <tbody>
@@ -27,9 +31,12 @@
                 <td>{{ client.telephone }}</td>
                 <td>{{ client.sexe }}</td>
                 <td>
-                    <a href="{{ path('client_show', {'id': client.id}) }}">show</a>
-                    <a href="{{ path('client_edit', {'id': client.id}) }}">edit</a>
+                    <a href="{{ path('client_show', {'id': client.id}) }}">Voir</a>
                 </td>
+                <td>
+                    <a href="{{ path('client_edit', {'id': client.id}) }}">Modifier</a>
+                </td>
+
             </tr>
         {% else %}
             <tr>
@@ -38,6 +45,10 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
+</div>
 
-    <a href="{{ path('client_new') }}">Create new</a>
-{% endblock %}
+    <a href="{{ path('client_new') }}">
+        <div class="lien">Créer un client </div>
+    </a>
+</body>

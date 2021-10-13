@@ -46,7 +46,7 @@ class ClientFestival
         return $this->id;
     }
 
-    public function getIdclient(): Client
+    public function getIdclient(): ?Client
     {
         return $this->idclient;
     }
@@ -58,7 +58,7 @@ class ClientFestival
         return $this;
     }
 
-    public function getIdfestival(): Festival
+    public function getIdfestival(): ?Festival
     {
         return $this->idfestival;
     }
