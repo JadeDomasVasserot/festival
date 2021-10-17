@@ -8,10 +8,10 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>NomScene</th>
+                <th>Nom Scene</th>
                 <th>Prenom</th>
                 <th>Nom</th>
-                <th>DateNaissance</th>
+                <th>Date Naissance</th>
                 <th>Sexe</th>
                 <th>Voir</th>
                 <th>Editer</th>
@@ -25,7 +25,7 @@
                 <td>{{ chanteur.nomScene }}</td>
                 <td>{{ chanteur.prenom }}</td>
                 <td>{{ chanteur.nom }}</td>
-                <td>{{ chanteur.dateNaissance ? chanteur.dateNaissance|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ chanteur.dateNaissance ? chanteur.dateNaissance|date('d-m-Y') : '' }}</td>
                 <td>{{ chanteur.sexe }}</td>
                 <td><a href="{{ path('chanteur_show', {'id': chanteur.id}) }}">Voir</a></td>
                 <td> <a href="{{ path('chanteur_edit', {'id': chanteur.id}) }}">Modifier</a></td>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 13 oct. 2021 à 14:13
+-- Généré le : Dim 17 oct. 2021 à 18:32
 -- Version du serveur :  8.0.26
 -- Version de PHP : 7.3.21
 
@@ -42,16 +42,16 @@ CREATE TABLE IF NOT EXISTS `chanson` (
 --
 
 INSERT INTO `chanson` (`id`, `nomChanson`, `nomAlbum`, `duree`, `genre`) VALUES
-(1, 'Tombé', 'Pyramide', '03:37:00', 'Variété Française'),
-(2, 'Si t\'es pas là', 'Pyramide', '03:59:00', 'Variété Française'),
-(3, 'Aimer à mort', 'Joie de vivre', '02:52:00', 'Pop'),
-(4, 'Jour 1', 'Chambre 12', '03:43:00', 'Pop française'),
-(5, 'Dingue', 'Chasseur d\'étoiles', '05:28:00', 'Variété'),
-(6, 'En feu', 'L\'Everest', '03:58:00', 'variété'),
-(7, 'L\'instinct', 'L\'avenir', '03:38:00', 'Variété'),
-(8, 'Le soldat', 'Vieillir avec toi', '03:53:00', 'Variété'),
-(9, 'Les gens qu\'on aime', 'Promesse', '03:24:00', 'Variété'),
-(10, '4 mots sur un piano', 'Si on chantait plus fort', '04:17:00', 'Variété');
+(1, 'Tombé', 'Pyramide', '00:03:37', 'Variété Française'),
+(2, 'Si t\'es pas là', 'Pyramide', '00:03:59', 'Variété Française'),
+(3, 'Aimer à mort', 'Joie de vivre', '00:02:52', 'Pop'),
+(4, 'Jour 1', 'Chambre 12', '00:03:43', 'Pop française'),
+(5, 'Dingue', 'Chasseur d\'étoiles', '00:05:28', 'Variété'),
+(6, 'En feu', 'L\'Everest', '00:03:58', 'variété'),
+(7, 'L\'instinct', 'L\'avenir', '00:03:38', 'Variété'),
+(8, 'Le soldat', 'Vieillir avec toi', '00:03:53', 'Variété'),
+(9, 'Les gens qu\'on aime', 'Promesse', '00:03:24', 'Variété'),
+(10, '4 mots sur un piano', 'Si on chantait plus fort', '00:04:17', 'Variété');
 
 -- --------------------------------------------------------
 
@@ -151,22 +151,23 @@ CREATE TABLE IF NOT EXISTS `client` (
   `dateNaissance` date NOT NULL,
   `adresse` text NOT NULL,
   `email` text NOT NULL,
-  `telephone` int NOT NULL,
+  `telephone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `sexe` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `client`
 --
 
 INSERT INTO `client` (`id`, `prenom`, `nom`, `dateNaissance`, `adresse`, `email`, `telephone`, `sexe`) VALUES
-(1, 'Pacôme', 'GUILLERMIN', '2000-03-16', '40 rue francisque Jomard 6900 Oullins', 'c.guillermin@epsi.fr', 781893199, 'H'),
-(2, 'Jade', 'DOMAS-VASSEROT', '2002-06-10', '30 rue du docteur Bonhomme, Étage 1\r\nÉtage 1', 'jadedomasvasserot@gmail.com', 781278622, 'F'),
-(3, 'Test', 'Effacer/edit', '1912-05-10', 'RUE DES AMOURS', 'test-edit.effacer@gmail.com', 758964845, 'H'),
-(4, 'Erine', 'Berard', '2012-10-11', 'RUE de la paix', 'erine.berard@epsi.fr', 658479658, 'F'),
-(5, 'Antoine', 'BRUNEAUX', '2021-09-12', 'Rue du Japon', 'antoine.bruneau@epsi.fr', 658479586, 'H'),
-(6, 'Jade', 'DOMAS', '2016-06-10', 'test', 'jade.test@gmail.com', 781597854, 'femme');
+(1, 'Pacôme', 'GUILLERMIN', '2000-03-16', '40 rue francisque Jomard, Oullins', 'c.guillermin@epsi.fr', '0781893199', 'Homme'),
+(2, 'Jade', 'DOMAS-VASSEROT', '2002-06-10', '30 rue du docteur Bonhomme, Lyon', 'jadedomasvasserot@gmail.com', '0781278622', 'Femme'),
+(3, 'Test', 'Effacer/edit', '1912-05-10', 'Rue des amours, Paris', 'test-edit.effacer@gmail.com', '0758964845', 'Homme'),
+(4, 'Erine', 'BERARD', '2012-10-11', 'Rue de la paix, Madrid', 'erine.berard@epsi.fr', '0658479658', 'Femme'),
+(5, 'Antoine', 'BRUNAUD', '2021-09-12', 'Rue du Japon, Tokyo', 'antoine.bruneau@epsi.fr', '0658479586', 'Homme'),
+(6, 'Jade', 'DOMAS', '2016-06-10', 'test', 'jade.test@gmail.com', '0781597854', 'Femme'),
+(15, 'Colin', 'TIXIER', '1909-07-07', '30 rue du docteur Bonhomme', 'colin.test@gmail.com', '781278622', 'Homme');
 
 -- --------------------------------------------------------
 
@@ -182,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `client_festival` (
   PRIMARY KEY (`id`),
   KEY `IdClientFk_ClientFestival` (`idClient`),
   KEY `IdFestivalFk_ClientFestival` (`idFestival`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `client_festival`
@@ -190,7 +191,8 @@ CREATE TABLE IF NOT EXISTS `client_festival` (
 
 INSERT INTO `client_festival` (`id`, `idClient`, `idFestival`) VALUES
 (2, 2, 2),
-(3, 6, 1);
+(3, 6, 1),
+(16, 15, 4);
 
 -- --------------------------------------------------------
 
@@ -207,16 +209,17 @@ CREATE TABLE IF NOT EXISTS `festival` (
   `genre` text NOT NULL,
   `nbPlaces` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `festival`
 --
 
 INSERT INTO `festival` (`id`, `nomFestival`, `dateDebut`, `lieu`, `genre`, `nbPlaces`) VALUES
-(1, 'Francofolies', '2022-07-13 19:00:00', 'La rochelle', 'Tous genre', 1500),
+(1, 'Francofolies', '2022-07-13 19:00:00', 'La Rochelle, France', 'Pop', 1500),
 (2, 'TomorrowLand', '2022-07-22 20:15:00', 'Belgique', 'Fous Furieux', 1750),
-(3, 'Festival Rock in Rio', '2022-06-18 16:45:00', 'Lisbonne', 'Rock', 1386);
+(3, 'Festival Rock in Rio', '2022-06-18 16:45:00', 'Lisbonne, Portugal', 'Rock', 1386),
+(4, 'Rock en Seine 2022', '2022-08-25 15:30:00', 'Paris, France', 'Rock', 850);
 
 --
 -- Contraintes pour les tables déchargées

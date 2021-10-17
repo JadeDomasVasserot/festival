@@ -17,11 +17,11 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Nomfestival</th>
-                        <th>Datedebut</th>
+                        <th>Nom festival</th>
+                        <th>Date debut</th>
                         <th>Lieu</th>
                         <th>Genre</th>
-                        <th>Nbplaces</th>
+                        <th>Nb places</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +29,7 @@
                     <tr>
                         <td>{{ festival.id }}</td>
                         <td>{{ festival.nomfestival }}</td>
-                        <td>{{ festival.datedebut ? festival.datedebut|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ festival.datedebut ? festival.datedebut|date('d-m-Y H:i') : '' }}</td>
                         <td>{{ festival.lieu }}</td>
                         <td>{{ festival.genre }}</td>
                         <td>{{ festival.nbplaces }}</td>>

@@ -24,7 +24,7 @@ class ChansonChanteur
     /**
      * @var \Chanson
      *
-     * @ORM\ManyToOne(targetEntity="Chanson")
+     * @ORM\ManyToOne(targetEntity="Chanson",cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idChanson", referencedColumnName="id")
      * })
@@ -34,7 +34,7 @@ class ChansonChanteur
     /**
      * @var \Chanteur
      *
-     * @ORM\ManyToOne(targetEntity="Chanteur")
+     * @ORM\ManyToOne(targetEntity="Chanteur",cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idChanteur", referencedColumnName="id")
      * })

@@ -24,7 +24,7 @@ class ClientFestival
     /**
      * @var \Client
      *
-     * @ORM\ManyToOne(targetEntity="Client")
+     * @ORM\ManyToOne(targetEntity="Client",cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idClient", referencedColumnName="id")
      * })
@@ -34,7 +34,7 @@ class ClientFestival
     /**
      * @var \Festival
      *
-     * @ORM\ManyToOne(targetEntity="Festival")
+     * @ORM\ManyToOne(targetEntity="Festival",cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idFestival", referencedColumnName="id")
      * })

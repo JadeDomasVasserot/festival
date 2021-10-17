@@ -16,3 +16,4 @@ if (entitysexe) {
     entitysexe.innerHTML = '<div class="spacing"><label class="label radio-container">Homme <input type="radio" id="'+entity+'_sexe_0" name="'+entity+'[sexe]" required="required" value="Homme"><span class="checkmark"></span></label></div>'+
     '<div class="spacing"><label class="label radio-container">Femme <input type="radio" id="'+entity+'_sexe_1" name="'+entity+'[sexe]" required="required" value="Femme"><span class="checkmark"></span></label></div>'
 }
+ 

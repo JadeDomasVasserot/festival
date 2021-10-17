@@ -76,12 +76,15 @@ class IndexController extends AbstractController
             'attr' => ['class' => 'input--style-4' ],
             'label_attr' => ['class' => 'label' ]
         ])
-        ->add('sexe',ChoiceType::class,[
+        ->add('sexe', ChoiceType::class, [
+            'choices'  => [
+                'Homme' => 'Homme',
+                'Femme' => 'Femme'
+            ],
             'label_attr' => ['class' => 'label' ],
-            'label' =>'Sexe',
-            'choices'=> ['Homme' => 'Homme','Femme' => 'Femme'],
-            'attr'=> ['class' => 'input--style-4'],
-            'expanded' => true,
+            'label' =>'Sexe'
+            
+            
         ])
             ->add('Sauvegarder', SubmitType::class,[
             'attr'=> ['class' => 'btn btn--radius-2 btn--blue'],

@@ -57,16 +57,16 @@ class Client
     private $email;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="telephone", type="integer", nullable=false)
+     * @ORM\Column(name="telephone", type="text", nullable=false)
      */
     private $telephone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sexe", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="sexe", type="text", length=10, nullable=false)
      */
     private $sexe;
 
@@ -135,12 +135,12 @@ class Client
         return $this;
     }
 
-    public function getTelephone(): ?int
+    public function getTelephone(): ?string
     {
         return $this->telephone;
     }
 
-    public function setTelephone(int $telephone): self
+    public function setTelephone(string $telephone): self
     {
         $this->telephone = $telephone;
 

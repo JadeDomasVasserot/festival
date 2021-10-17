@@ -26,7 +26,7 @@ class ChansonType extends AbstractType
         ])
         ->add('duree',TimeType::class,[
             'label_attr'=> ['class' => 'label'],
-            'with_seconds' => true
+            'with_seconds' => true,
         ])
         ->add('genre',TextType::class,[
             'attr' => ['class' => 'input--style-4' ],

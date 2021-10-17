@@ -24,7 +24,7 @@ class ChanteurFestival
     /**
      * @var \Chanteur
      *
-     * @ORM\ManyToOne(targetEntity="Chanteur")
+     * @ORM\ManyToOne(targetEntity="Chanteur",cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idChanteur", referencedColumnName="id")
      * })
@@ -34,7 +34,7 @@ class ChanteurFestival
     /**
      * @var \Festival
      *
-     * @ORM\ManyToOne(targetEntity="Festival")
+     * @ORM\ManyToOne(targetEntity="Festival",cascade={"persist"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idFestival", referencedColumnName="id")
      * })

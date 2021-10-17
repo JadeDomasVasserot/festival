@@ -9,11 +9,7 @@ a {
     line-height: 20px;
     cursor: pointer;
 }
- a:hover{
-   
-    font-size: 20px;
-    transition-duration: 0.5s;
-}
+
 .lienSimple{
     color:black;
 }
