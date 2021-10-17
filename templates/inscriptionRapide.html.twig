@@ -4,48 +4,65 @@
 <head>
     <meta charset="utf-8">
     <title>inscriptionRapide</title>
-    <!-- <link href="" rel="stylesheet" media="all"> -->
+    <link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+    <link rel="stylesheet" type="text/css" href=" {{ asset('css/form.css')}}  ">
+    <link rel="stylesheet" type="text/css" href=" {{ asset('css/inscriptionRapide.css')}}  ">
+        </head>
 </head>
 {{ include('nav.html.twig')}}
 <body>
-<h1>
-    S'inscrire,
-</h1>
-<h2>
-    Festival disponible :
-</h2>
-<table class="table">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Nomfestival</th>
-        <th>Datedebut</th>
-        <th>Lieu</th>
-        <th>Genre</th>
-        <th>Nbplaces</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for festival in festivals %}
-        <tr>
-            <td>{{ festival.id }}</td>
-            <td>{{ festival.nomfestival }}</td>
-            <td>{{ festival.datedebut ? festival.datedebut|date('Y-m-d H:i:s') : '' }}</td>
-            <td>{{ festival.lieu }}</td>
-            <td>{{ festival.genre }}</td>
-            <td>{{ festival.nbplaces }}</td>>
-        </tr>
-    {% else %}
-        <tr>
-            <td colspan="7">no records found</td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
 
-{{form(form)}}
+<p class="festi">
+    Festivals
+</p>
+ <div class="card-4">
+        <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nomfestival</th>
+                    <th>Datedebut</th>
+                    <th>Lieu</th>
+                    <th>Genre</th>
+                    <th>Nbplaces</th>
+                    <th>Voir</th>
+                    <th>Modifier</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for festival in festivals %}
+                <tr>
+                    <td>{{ festival.id }}</td>
+                    <td>{{ festival.nomfestival }}</td>
+                    <td>{{ festival.datedebut ? festival.datedebut|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ festival.lieu }}</td>
+                    <td>{{ festival.genre }}</td>
+                    <td>{{ festival.nbplaces }}</td>
+                    <td> <a href="{{ path('festival_show', {'id': festival.id}) }}">Voir</a></td>
+                <td><a href="{{ path('festival_edit', {'id': festival.id}) }}">Modifier</a></td>
 
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
 
+    
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h1 class="title">Inscription Rapide</h1>
+                    {{form(form)}}
+                </div>
+            </div>
+        </div>
+    <script src="{{ asset('js/myscript.js') }}"></script>
 
 </body>
 </html>

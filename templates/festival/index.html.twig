@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
 <body class="bg-gra-01">
 <div class="card-4">
-    <p>Index de tous les chanteurs</p>
+    <p>Index de tous les festivals</p>
     <div class="table">
     <table>
         <thead>
@@ -26,8 +26,8 @@
                 <td>{{ festival.lieu }}</td>
                 <td>{{ festival.genre }}</td>
                 <td>{{ festival.nbplaces }}</td>
-                <td> <a href="{{ path('festival_show', {'id': festival.id}) }}">show</a></td>
-               <td><a href="{{ path('festival_edit', {'id': festival.id}) }}">edit</a></td>
+                <td> <a href="{{ path('festival_show', {'id': festival.id}) }}">Voir</a></td>
+               <td><a href="{{ path('festival_edit', {'id': festival.id}) }}">Modifier</a></td>
 
             </tr>
         {% else %}

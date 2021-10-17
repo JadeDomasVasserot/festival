@@ -5,11 +5,7 @@
 }
 
 body {
-    background-image: -o-linear-gradient(left bottom, #373EC4 0%, #629FA6 59%, #BCBEF5 100%);
-    background-image: -moz-linear-gradient(left bottom, #373EC4 0%, #629FA6 59%, #BCBEF5 100%);
-    background-image: -webkit-linear-gradient(left bottom, #373EC4 0%, #629FA6 59%, #BCBEF5 100%);
-    background-image: -ms-linear-gradient(left bottom, #373EC4 0%, #629FA6 59%, #BCBEF5 100%);
-    background-image: linear-gradient(to left bottom, #373EC4 0%, #629FA6 59%, #BCBEF5 100%);
+   background-image: url('https://images.unsplash.com/photo-1528489290689-444dece355b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
 }
 
 div {

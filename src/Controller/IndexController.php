@@ -16,15 +16,21 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 class IndexController extends AbstractController
 {
     /**
-     * @Route("/index", name="index")
+     * @Route("/", name="index")
      */
     public function index(): Response
     {
-        return $this->render('Index.html.twig') ;
+        $festivals = $this->getDoctrine()
+            ->getRepository(Festival::class)
+            ->findAll();
+
+        return $this->render('Index.html.twig', [
+            'festivals' => $festivals,
+        ]);
     }
 
     /**
@@ -47,21 +53,39 @@ class IndexController extends AbstractController
         $InscriptionRapide = new InscriptionRapide;
 
         $form = $this->createFormBuilder($InscriptionRapide)
-            ->add('prenom')
-            ->add('nom')
-            ->add('datenaissance',BirthdayType::class, array(
-                    'format' => 'dd-MM-yyyy')
-            )
-            ->add('adresse')
-            ->add('email', EmailType::class)
-            ->add('telephone', TelType::class)
-            ->add('sexe', ChoiceType::class, [
-                'choices'  => [
-                    'Homme' => 'H',
-                    'Femme' => 'F'
-                ]
-            ])
-            ->add('Envoyer', SubmitType::class)
+        ->add('prenom',TextType::class,[
+            'attr' => ['class' => 'input--style-4' ],
+            'label_attr' => ['class' => 'label' ]
+        ])
+        ->add('nom',TextType::class,[
+            'attr' => ['class' => 'input--style-4' ],
+            'label_attr' => ['class' => 'label' ]
+        ])
+        ->add('datenaissance',BirthdayType::class, array(
+            'format' => 'dd-MM-yyyy','label_attr' => ['class' => 'label' ],'label' => 'Date de naissance')
+           )
+        ->add('adresse',TextType::class,[
+            'attr' => ['class' => 'input--style-4' ],
+            'label_attr' => ['class' => 'label' ]
+        ])
+        ->add('email',EmailType::class,[
+            'attr' => ['class' => 'input--style-4' ],
+            'label_attr' => ['class' => 'label' ]
+        ])
+        ->add('telephone',TelType::class,[
+            'attr' => ['class' => 'input--style-4' ],
+            'label_attr' => ['class' => 'label' ]
+        ])
+        ->add('sexe',ChoiceType::class,[
+            'label_attr' => ['class' => 'label' ],
+            'label' =>'Sexe',
+            'choices'=> ['Homme' => 'Homme','Femme' => 'Femme'],
+            'attr'=> ['class' => 'input--style-4'],
+            'expanded' => true,
+        ])
+            ->add('Sauvegarder', SubmitType::class,[
+            'attr'=> ['class' => 'btn btn--radius-2 btn--blue'],
+        ])
             ->getForm();
 
         $form->handlerequest($request);
@@ -96,7 +120,9 @@ class IndexController extends AbstractController
         $form2 = $this->createFormBuilder($InscriptionRapide2)
             ->add('idclient',NumberType::class, array('data' => $id))
             ->add('idfestival')
-            ->add('Envoyer', SubmitType::class)
+           ->add('Sauvegarder', SubmitType::class,[
+            'attr'=> ['class' => 'btn btn--radius-2 btn--blue'],
+           ])
             ->getForm();
 
         $form2->handlerequest($request);
@@ -108,8 +134,7 @@ class IndexController extends AbstractController
             $entityManager->persist($InscriptionInfos);
             $entityManager->flush();
 
-            return new Response ('Bravo, vous vous êtes inscrits ! Formulaire validé') ;
-
+            return $this->render('inscriptionValide.html.twig');
         }
 
         return $this->render('inscriptionRapide.html.twig',
