@@ -1,10 +1,21 @@
-{{ include('nav.html.twig')}}
+
+{% block stylesheets %}
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
-    <h1>Edit Festival</h1>
+    <div class="page-wrapper bg-gra-02 p-t-20 p-b-50 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h1 class="title">Editer votre festival</h1>
+                    {{ include('festival/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+                    {{ include('festival/_delete_form.html.twig') }}
+                </div>
+            </div>
+            <a class="go-back" href="{{ path('festival_index') }}">⮜ Retour à la liste</a>
+        </div>
+    </div>
 
-    {{ include('festival/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('festival_index') }}">back to list</a>
-
-    {{ include('festival/_delete_form.html.twig') }}
+    <script src="{{ asset('js/myscript.js') }}"></script>
 {% endblock %}

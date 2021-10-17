@@ -2,51 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22a0ef70-7755-4a7b-9186-308d8c7503f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/indexEntite.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/nav.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/showw.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/nav.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ChanteurFestival.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ChanteurFestival.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ClientFestival.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ClientFestival.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/nav.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson_chanteur/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson_chanteur/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson_chanteur/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson_chanteur/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson_chanteur/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson_chanteur/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanson_chanteur/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanson_chanteur/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur_festival/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur_festival/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur_festival/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur_festival/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur_festival/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur_festival/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/chanteur_festival/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/chanteur_festival/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client_festival/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client_festival/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client_festival/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client_festival/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client_festival/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client_festival/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/client_festival/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client_festival/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/festival/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/festival/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/festival/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/festival/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/festival/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/festival/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/festival/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/festival/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inscription.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inscriptionRapide.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inscriptionRapide.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nav.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +212,7 @@
       <workItem from="1634051621333" duration="21752000" />
       <workItem from="1634115415428" duration="3557000" />
       <workItem from="1634128721718" duration="4367000" />
-      <workItem from="1634133873531" duration="4310000" />
+      <workItem from="1634133873531" duration="5357000" />
     </task>
     <servers />
   </component>

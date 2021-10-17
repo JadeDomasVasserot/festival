@@ -1,8 +1,21 @@
-{{ include('nav.html.twig')}}
+
+{% block stylesheets %}
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
-    <h1>Create new Chanteur</h1>
+    <div class="page-wrapper bg-gra-02 p-t-100 p-b-50 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h1 class="title">Créer un nouveau Chanteur</h1>
 
-    {{ include('chanteur/_form.html.twig') }}
-
-    <a href="{{ path('chanteur_index') }}">back to list</a>
+                    {{ include('chanteur/_form.html.twig') }}
+                </div>
+            </div>
+            <a class="go-back" href="{{ path('chanteur_index') }}">⮜ Retour à la liste</a>
+        </div>
+    </div>
+    
+    <script src="{{ asset('js/myscript.js') }}"></script>
 {% endblock %}

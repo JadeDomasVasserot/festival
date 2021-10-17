@@ -1,10 +1,20 @@
-{{ include('nav.html.twig')}}
+{% block stylesheets %}
+<link href="{{ asset('css/form.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
-    <h1>Edit ClientFestival</h1>
-
-    {{ include('client_festival/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('client_festival_index') }}">back to list</a>
-
-    {{ include('client_festival/_delete_form.html.twig') }}
+    <div class="page-wrapper bg-gra-02 p-t-100 p-b-50 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h1 class="title">Modifier l'inscription d'un client d'un festival</h1>
+                    {{ include('client_festival/_form.html.twig') }}
+                    {{ include('client_festival/_delete_form.html.twig') }}
+                </div>
+            </div>
+            <a class="go-back" href="{{ path('client_festival_index') }}">⮜ Retour à la liste</a>
+        </div>
+    </div>
+    
+    <script src="{{ asset('js/myscript.js') }}"></script>
 {% endblock %}
