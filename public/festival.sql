@@ -229,22 +229,22 @@ INSERT INTO `festival` (`id`, `nomFestival`, `dateDebut`, `lieu`, `genre`, `nbPl
 -- Contraintes pour la table `chanson_chanteur`
 --
 ALTER TABLE `chanson_chanteur`
-  ADD CONSTRAINT `IdChansonFk_ChansonChanteur` FOREIGN KEY (`idChanson`) REFERENCES `chanson` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `IdChanteurFk_ChansonChanteur` FOREIGN KEY (`idChanteur`) REFERENCES `chanteur` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `IdChansonFk_ChansonChanteur` FOREIGN KEY (`idChanson`) REFERENCES `chanson` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `IdChanteurFk_ChansonChanteur` FOREIGN KEY (`idChanteur`) REFERENCES `chanteur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `chanteur_festival`
 --
 ALTER TABLE `chanteur_festival`
-  ADD CONSTRAINT `IdChanteurFk_ChanteurFestival` FOREIGN KEY (`idChanteur`) REFERENCES `chanteur` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `IdFestivalFk_ChanteurFestival` FOREIGN KEY (`idFestival`) REFERENCES `festival` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `IdChanteurFk_ChanteurFestival` FOREIGN KEY (`idChanteur`) REFERENCES `chanteur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `IdFestivalFk_ChanteurFestival` FOREIGN KEY (`idFestival`) REFERENCES `festival` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `client_festival`
 --
 ALTER TABLE `client_festival`
-  ADD CONSTRAINT `IdClientFk_ClientFestival` FOREIGN KEY (`idClient`) REFERENCES `client` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `IdFestivalFk_ClientFestival` FOREIGN KEY (`idFestival`) REFERENCES `festival` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `IdClientFk_ClientFestival` FOREIGN KEY (`idClient`) REFERENCES `client` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `IdFestivalFk_ClientFestival` FOREIGN KEY (`idFestival`) REFERENCES `festival` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
