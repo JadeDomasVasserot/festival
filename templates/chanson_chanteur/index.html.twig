@@ -1,0 +1,49 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Association entre chanson et chanteur</p>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Id + Chanson(Lien)
+                    <th>Id + Chanteur (Lien)</th>
+                    <th>Voir</th>
+                    <th>Modifier</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for chanson_chanteur in chanson_chanteurs %}
+                <tr>
+                    <td>{{ chanson_chanteur.id }}</td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('chanson_show', {'id': chanson_chanteur.idchanson}) }}">{{ chanson_chanteur.idchanson }}</a>
+                    </td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('chanteur_show', {'id': chanson_chanteur.idchanteur}) }}">{{ chanson_chanteur.idchanteur }}</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('chanson_chanteur_show', {'id': chanson_chanteur.id}) }}">Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('chanson_chanteur_edit', {'id': chanson_chanteur.id}) }}">Modifier</a>
+                    </td>
+
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="{{ path('chanson_chanteur_new') }}">
+<div class="lien">
+    Nouvelle association
+</div>
+</a>
+</body>

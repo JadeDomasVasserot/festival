@@ -1,0 +1,46 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Index de tous les festivals</p>
+    <div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomfestival</th>
+                <th>Datedebut</th>
+                <th>Lieu</th>
+                <th>Genre</th>
+                <th>Nbplaces</th>
+                <th>Voir</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for festival in festivals %}
+            <tr>
+                <td>{{ festival.id }}</td>
+                <td>{{ festival.nomfestival }}</td>
+                <td>{{ festival.datedebut ? festival.datedebut|date('d-m-Y H:i') : '' }}</td>
+                <td>{{ festival.lieu }}</td>
+                <td>{{ festival.genre }}</td>
+                <td>{{ festival.nbplaces }}</td>
+                <td> <a href="{{ path('festival_show', {'id': festival.id}) }}">Voir</a></td>
+               <td><a href="{{ path('festival_edit', {'id': festival.id}) }}">Modifier</a></td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<a href="{{ path('festival_new') }}">
+    <div class="lien">Créer un festival </div>
+</a>
+</body>

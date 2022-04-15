@@ -1,0 +1,40 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/showw.css')}}  ">
+{% block body %}
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <p>Chanteur : {{ chanteur_festival.idchanteur }} inscrit au festival  {{ chanteur_festival.idfestival }}</p>
+    <table >
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <th>Id Chanteur</th>
+                <th>Id Festival</th>
+            </tr>
+            <tr>
+                <td>{{ chanteur_festival.id }}</td>
+                <td>{{ chanteur_festival.idchanteur }}</td>
+                <td>{{ chanteur_festival.idfestival }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+    <a href="{{ path('chanteur_festival_index') }}">
+        <div class="lien">Retour à l'index</div>
+    </a>
+
+    <a href="{{ path('chanteur_festival_edit', {'id':chanteur_festival.id}) }}">
+        <div class="lien">Editer</div>
+    </a>
+    <div class="lien">
+        {{ include('chanteur_festival/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

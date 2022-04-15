@@ -1,0 +1,41 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/showw.css')}}  ">
+{% block body %}
+
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <p>{{ client_festival.idclient }} inscrit au festival  {{ client_festival.idfestival}}</p>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id de la table d'association</th>
+                <th>Id Client</th>
+                <th>Id Festival</th>
+            </tr>
+            <tr>
+                <td>{{ client_festival.id }}</td>
+                <td>{{ client_festival.idclient }}</td>
+                <td>{{ client_festival.idfestival }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    <a href="{{ path('client_festival_index') }}">
+        <div class="lien">Retour à l'index</div>
+    </a>
+
+    <a href="{{ path('client_festival_edit', {'id': client_festival.id}) }}">
+        <div class="lien">Editer</div>
+    </a>
+    <div class="lien">
+        {{ include('client_festival/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}
+

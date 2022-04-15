@@ -1,0 +1,116 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Tous les chanteurs inscrits à un festival</p>
+    <p>Chanteurs déjà inscrits</p>
+    <div class="table">
+
+        <table >
+            <thead>
+                <tr>
+                    <th>Id de la table d'association</th>
+                    <th>Id + Chanteur (lien)</th>
+                    <th>Id + Festival(lien)</th>
+                    <th>Voir</th>
+                    <th>Modifier</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for chanteur_festival in chanteur_festivals %}
+                <tr>
+                    <td>{{ chanteur_festival.id }}</td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('chanteur_show', {'id': chanteur_festival.idchanteur})}}">
+                        {{ chanteur_festival.idchanteur }}</a>
+                    </td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('festival_show', {'id':chanteur_festival.idfestival})}}">
+                            {{ chanteur_festival.idfestival }}</a>
+                        </td>
+                    <td>
+                        <a href="{{ path('chanteur_festival_show', {'id': chanteur_festival.id}) }}">Voir</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('chanteur_festival_edit', {'id': chanteur_festival.id}) }}">Editer</a>
+                    </td>
+
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">aucun chanteur d'inscrit</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <p>Chanteurs déjà enregistrés</p>
+    <div class="table">
+        <table >
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>NomScene</th>
+                    <th>Prenom</th>
+                    <th>Nom</th>
+                    <th>DateNaissance</th>
+                    <th>Sexe</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for chanteur in chanteurs %}
+                <tr>
+                    <td>{{ chanteur.id }}</td>
+                    <td>{{ chanteur.nomScene }}</td>
+                    <td>{{ chanteur.prenom }}</td>
+                    <td>{{ chanteur.nom }}</td>
+                    <td>{{ chanteur.dateNaissance ? chanteur.dateNaissance|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ chanteur.sexe }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <p>Festivals en approche</p>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nomfestival</th>
+                    <th>Datedebut</th>
+                    <th>Lieu</th>
+                    <th>Genre</th>
+                    <th>Nbplaces</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for festival in festivals %}
+                <tr>
+                    <td>{{ festival.id }}</td>
+                    <td>{{ festival.nomfestival }}</td>
+                    <td>{{ festival.datedebut ? festival.datedebut|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ festival.lieu }}</td>
+                    <td>{{ festival.genre }}</td>
+                    <td>{{ festival.nbplaces }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+    <a href="{{ path('chanteur_festival_new') }}">
+    <div class="lien">
+        S'inscrire
+
+    </div></a>
+
+</body>

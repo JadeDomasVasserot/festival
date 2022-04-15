@@ -1,0 +1,54 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Index de tous les clients</p>
+    <div class="table">
+    <table >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Datenaissance</th>
+                <th>Adresse</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Sexe</th>
+                <th>Voir</th>
+                <th>Editer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.prenom }}</td>
+                <td>{{ client.nom }}</td>
+                <td>{{ client.datenaissance ? client.datenaissance|date('d-m-Y') : '' }}</td>
+                <td>{{ client.adresse }}</td>
+                <td>{{ client.email }}</td>
+                <td>{{ client.telephone }}</td>
+                <td>{{ client.sexe }}</td>
+                <td>
+                    <a href="{{ path('client_show', {'id': client.id}) }}">Voir</a>
+                </td>
+                <td>
+                    <a href="{{ path('client_edit', {'id': client.id}) }}">Modifier</a>
+                </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+    <a href="{{ path('client_new') }}">
+        <div class="lien">Créer un client </div>
+    </a>
+</body>

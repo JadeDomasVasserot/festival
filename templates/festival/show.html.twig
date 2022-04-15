@@ -1,0 +1,55 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/showw.css')}}  ">
+{% block body %}
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <p>Festival : {{ festival.nomfestival }}</p>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ festival.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomfestival</th>
+                <td>{{ festival.nomfestival }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{{ festival.datedebut ? festival.datedebut|date('d-m-Y H:i') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ festival.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ festival.genre }}</td>
+            </tr>
+            <tr>
+                <th>Nbplaces</th>
+                <td>{{ festival.nbplaces }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+    <a href="{{ path('festival_index') }}">
+        <div class="lien">Retour à l'index</div>
+    </a>
+
+    <a href="{{ path('festival_edit', {'id': festival.id}) }}">
+        <div class="lien">Editer</div>
+    </a>
+    <div class="lien">
+        {{ include('festival/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}

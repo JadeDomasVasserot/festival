@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   background-image: url('https://images.unsplash.com/photo-1582711012124-a56cf82307a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1880&q=80');
+}
+
+div {
+    background-color: #ffffffc7;
+    padding: 20px;
+    margin: 15px;
+
+}
+
+
+.footer {
+    margin-top: 100px;
+    padding: 35px;
+    background-color: #292929;
+    visibility: hidden;
+}

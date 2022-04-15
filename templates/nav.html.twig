@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href=" {{ asset('css/nav.css')}}  ">
+</head>
+<body>
+<header>
+    <nav >
+        <ul class="mainmenu">
+            <li><a href="{{path('index')}}"> Accueil</a> </li>
+            <li> <a href="{{path ('chanson_index')}}">Chanson</a>
+                <ul class="association">
+                <li> <a href="{{path ('chanson_new')}}">New</a></li>
+                </ul>
+            </li>
+            <li> <a href="{{path ('chanteur_index')}}">Chanteur</a>
+                <ul class="association">
+                    <li> <a href="{{path ('chanteur_new')}}">New</a></li>
+                </ul></li>
+            <li><a href="{{path ('client_index')}}">Client</a>
+                <ul class="association">
+                    <li> <a href="{{path ('client_new')}}">New</a></li>
+                </ul></li>
+            <li><a href="{{path ('festival_index')}}">Festival</a>
+                <ul class="association">
+                    <li> <a href="{{path ('festival_new')}}">New</a></li>
+                </ul></li>
+            <li><a>Associations</a>
+                <ul class="association">
+                    <li><a href="{{path ('chanson_chanteur_index')}}">Chanson/Chanteur</a></li>
+                    <li><a href="{{path ('chanteur_festival_index')}}">Chanteur/Festival</a></li>
+                    <li><a href="{{path ('client_festival_index')}}">Client/Festival</a></li>
+                </ul>
+            </li>
+            <li> <a > Inscription Festival</a>
+                <ul class="association">
+                    <li><a href="{{path ('chanteur_festival_index')}}">Chanteur</a></li>
+                    <li><a href="{{path ('client_festival_index')}}">Client</a></li>
+                </ul>
+            </li>
+            <li><a href="{{path ('inscriptionRapide')}}"> Inscription Rapide</a> </li>
+
+        </ul>
+    </nav>
+</header>
+</body>
+</html>

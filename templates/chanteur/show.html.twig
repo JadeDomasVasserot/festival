@@ -1,0 +1,54 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/showw.css')}}  ">
+{% block body %}
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <p>Chanteur : {{ chanteur.nomScene }}</p>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chanteur.id }}</td>
+            </tr>
+            <tr>
+                <th>NomScene</th>
+                <td>{{ chanteur.nomScene }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ chanteur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ chanteur.nom }}</td>
+            </tr>
+            <tr>
+                <th>DateNaissance</th>
+                <td>{{ chanteur.dateNaissance ? chanteur.dateNaissance|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ chanteur.sexe }}</td>
+            </tr>
+        </tbody>
+    </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <a href="{{ path('chanteur_index') }}">
+        <div class="lien">Retour à l'index</div>
+    </a>
+
+    <a href="{{ path('chanteur_edit', {'id': chanteur.id}) }}">
+        <div class="lien">Editer</div>
+    </a>
+    <div class="lien">
+        {{ include('chanteur/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}

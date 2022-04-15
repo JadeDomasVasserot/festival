@@ -1,0 +1,50 @@
+        <link rel="stylesheet" type="text/css" href=" {{ asset('css/showw.css')}}  ">
+        {% block body %}
+
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100">
+                        <p>Titre : {{ chanson.nomChanson }}</p>
+    <table>
+
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chanson.id }}</td>
+            </tr>
+            <tr>
+                <th>NomChanson</th>
+                <td>{{ chanson.nomChanson }}</td>
+            </tr>
+            <tr>
+                <th>NomAlbum</th>
+                <td>{{ chanson.nomAlbum }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ chanson.duree ? chanson.duree|date('i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ chanson.genre }}</td>
+            </tr>
+        </tbody>
+    </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <a href="{{ path('chanson_index') }}">
+        <div class="lien">Retour à l'index</div>
+    </a>
+
+    <a href="{{ path('chanson_edit', {'id': chanson.id}) }}">
+        <div class="lien">Editer</div>
+    </a>
+    <div class="lien">
+    {{ include('chanson/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}

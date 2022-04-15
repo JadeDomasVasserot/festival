@@ -1,0 +1,41 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/showw.css')}}  ">
+{% block body %}
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+
+    <p>Chanson : {{ chanson_chanteur.idchanson }} de {{ chanson_chanteur.idchanteur }} </p>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id de l'association</th>
+                <th>Id de la chanson</th>
+                <th>Id du chanteur</th>
+            </tr>
+                <td>{{ chanson_chanteur.id }}</td>
+                <td>{{ chanson_chanteur.idchanson }}</td>
+                <td>{{ chanson_chanteur.idchanteur }}</td>
+            </tr>
+        </tbody>
+    </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+    <a href="{{ path('chanson_chanteur_index') }}">
+        <div class="lien">Retour à l'index</div>
+    </a>
+
+    <a href="{{ path('chanson_chanteur_edit', {'id': chanson_chanteur.id}) }}">
+        <div class="lien">Editer</div>
+    </a>
+    <div class="lien">
+        {{ include('chanson_chanteur/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}

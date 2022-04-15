@@ -1,0 +1,116 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Association entre client et festival</p>
+    <p>Clients déjà inscrits</p>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id de la table d'association</th>
+                    <th>Id + Client (lien)</th>
+                    <th>Id + Festival (lien)</th>
+                    <th>Voir</th>
+                    <th>Modifier</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for client_festival in client_festivals %}
+                <tr>
+                    <td>{{ client_festival.id }}</td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('client_show', {'id': client_festival.idclient})}}">
+                        {{ client_festival.idclient }}</a>
+                    </td>
+                    <td>
+                        <a class="lienSimple" href="{{ path('festival_show', {'id': client_festival.idfestival})}}">
+                        {{client_festival.idfestival }}</a>
+                    </td>
+                    <td><a  href="{{ path('client_festival_show', {'id': client_festival.id}) }}">voir</a></td>
+                    <td><a  href="{{ path('client_festival_edit', {'id': client_festival.id}) }}">éditer</a></td>
+
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">Aucun client enregistré</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <p>Clients déjà enregistrés</p>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Prenom</th>
+                    <th>Nom</th>
+                    <th>Datenaissance</th>
+                    <th>Adresse</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                    <th>Sexe</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for client in clients %}
+                <tr>
+                    <td>{{ client.id }}</td>
+                    <td>{{ client.prenom }}</td>
+                    <td>{{ client.nom }}</td>
+                    <td>{{ client.datenaissance ? client.datenaissance|date('Y-m-d') : '' }}</td>
+                    <td>{{ client.adresse }}</td>
+                    <td>{{ client.email }}</td>
+                    <td>{{ client.telephone }}</td>
+                    <td>{{ client.sexe }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <p>Festival en approche</p>
+    <div class="table">
+        <table >
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nomfestival</th>
+                    <th>Datedebut</th>
+                    <th>Lieu</th>
+                    <th>Genre</th>
+                    <th>Nbplaces</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for festival in festivals %}
+                <tr>
+                    <td>{{ festival.id }}</td>
+                    <td>{{ festival.nomfestival }}</td>
+                    <td>{{ festival.datedebut ? festival.datedebut|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ festival.lieu }}</td>
+                    <td>{{ festival.genre }}</td>
+                    <td>{{ festival.nbplaces }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="{{ path('client_festival_new') }}">
+    <div class="lien">
+       S'inscrire
+    </div>
+</a>
+</body>

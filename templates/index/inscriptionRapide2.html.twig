@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>inscriptionRapide</title>
+        <!-- <link href="" rel="stylesheet" media="all"> -->
+    </head>
+    <body>
+            <h1>
+                S'inscrire, 
+            </h1>
+
+            <h2>
+                Festival disponible :
+            </h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom festival</th>
+                        <th>Date debut</th>
+                        <th>Lieu</th>
+                        <th>Genre</th>
+                        <th>Nb places</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for festival in festivals %}
+                    <tr>
+                        <td>{{ festival.id }}</td>
+                        <td>{{ festival.nomfestival }}</td>
+                        <td>{{ festival.datedebut ? festival.datedebut|date('d-m-Y H:i') : '' }}</td>
+                        <td>{{ festival.lieu }}</td>
+                        <td>{{ festival.genre }}</td>
+                        <td>{{ festival.nbplaces }}</td>>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <p>Votre Identifian :</p>
+            {{form(form)}}
+
+            
+
+    </body>
+</html>

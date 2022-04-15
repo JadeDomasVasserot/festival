@@ -1,0 +1,60 @@
+    <!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <meta charset="utf-8">
+            <title>Index</title>
+            <link rel="stylesheet" type="text/css" href=" {{ asset('css/index.css')}}  ">
+            <link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+        </head>
+        <body>
+            {{ include('nav.html.twig')}}
+            <<script>
+            alert("Hello!\nCe site vous permet de vous inscrire à des festivals.\nVous pouvez modifier à souhait votre réservation.")
+                
+            </script>
+    <div class="card-4">
+        <p>Festivals</p>
+        <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom festival</th>
+                    <th>Date debut</th>
+                    <th>Lieu</th>
+                    <th>Genre</th>
+                    <th>Nb places</th>
+                    <th>Voir</th>
+                    <th>Modifier</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for festival in festivals %}
+                <tr>
+                    <td>{{ festival.id }}</td>
+                    <td>{{ festival.nomfestival }}</td>
+                    <td>{{ festival.datedebut ? festival.datedebut|date('d-m-Y H:i') : '' }}</td>
+                    <td>{{ festival.lieu }}</td>
+                    <td>{{ festival.genre }}</td>
+                    <td>{{ festival.nbplaces }}</td>
+                    <td> <a href="{{ path('festival_show', {'id': festival.id}) }}">Voir</a></td>
+                <td><a href="{{ path('festival_edit', {'id': festival.id}) }}">Modifier</a></td>
+
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+    <div class="card-4">
+        <p>Présentation du projet : </p>
+        <p><a href="{{asset('festival.sql')}}" download>Téléchargement et aperçu de notre BDD </a>
+        <br>
+            <img src="{{asset('/img/bdd_capture.PNG')}}" alt="prbl">
+    </div>
+    </body>
+    </html>

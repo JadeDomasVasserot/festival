@@ -1,0 +1,4 @@
+<form class="spacing" method="post" action="{{ path('chanson_chanteur_delete', {'id': chanson_chanteur.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer cette assotiation chanson/chanteur ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ chanson_chanteur.id) }}">
+    <button class="btn btn--radius-2 btn--red">Supprimer</button>
+</form>

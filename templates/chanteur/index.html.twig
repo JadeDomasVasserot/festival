@@ -1,0 +1,59 @@
+{{ include('nav.html.twig')}}
+<link rel="stylesheet" type="text/css" href=" {{ asset('css/indexEntite.css')}}  ">
+<body class="bg-gra-01">
+<div class="card-4">
+    <p>Index de tous les chanteurs</p>
+    <div class="table">
+    <table >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom Scene</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Date Naissance</th>
+                <th>Sexe</th>
+                <th>Voir</th>
+                <th>Editer</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for chanteur in chanteurs %}
+            <tr>
+                <td>{{ chanteur.id }}</td>
+                <td>{{ chanteur.nomScene }}</td>
+                <td>{{ chanteur.prenom }}</td>
+                <td>{{ chanteur.nom }}</td>
+                <td>{{ chanteur.dateNaissance ? chanteur.dateNaissance|date('d-m-Y') : '' }}</td>
+                <td>{{ chanteur.sexe }}</td>
+                <td><a href="{{ path('chanteur_show', {'id': chanteur.id}) }}">Voir</a></td>
+                <td> <a href="{{ path('chanteur_edit', {'id': chanteur.id}) }}">Modifier</a></td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+<a href="{{ path('chanteur_new') }}">
+    <div class="lien">
+        Créer un chanteur
+    </div>
+</a>
+<p>Ajouter des chansons en tant que chanteur !</p>
+<a  href="{{path ('chanson_new')}}">
+<div class="lien">
+    New Chanson
+</div>
+</a>
+<a  href="{{path ('chanson_chanteur_new')}}">
+<div class="lien">
+    Relier
+</div>
+</a>
+</body>
