@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `chanteur_festival` (
   PRIMARY KEY (`id`),
   KEY `IdFestivalFk_ChanteurFestival` (`idFestival`),
   KEY `IdChanteurFk_ChanteurFestival` (`idChanteur`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `chanteur_festival`
@@ -151,10 +151,10 @@ CREATE TABLE IF NOT EXISTS `client` (
   `dateNaissance` date NOT NULL,
   `adresse` text NOT NULL,
   `email` text NOT NULL,
-  `telephone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `telephone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `sexe` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `client`
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `client_festival` (
   PRIMARY KEY (`id`),
   KEY `IdClientFk_ClientFestival` (`idClient`),
   KEY `IdFestivalFk_ClientFestival` (`idFestival`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `client_festival`
@@ -209,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `festival` (
   `genre` text NOT NULL,
   `nbPlaces` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `festival`

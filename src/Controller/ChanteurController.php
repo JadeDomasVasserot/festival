@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Contrôleur permettant de gerer les chanteurs
+ */
 namespace App\Controller;
 
 use App\Entity\Chanteur;
@@ -11,11 +13,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/chanteur")
+ *  Route pour accéder à contrôleur chanteur
  */
 class ChanteurController extends AbstractController
 {
     /**
      * @Route("/", name="chanteur_index", methods={"GET"})
+     * Affiche un tableau avec tous les chanteurs
      */
     public function index(): Response
     {
@@ -30,6 +34,7 @@ class ChanteurController extends AbstractController
 
     /**
      * @Route("/new", name="chanteur_new", methods={"GET","POST"})
+     * permet de créer un chanteur
      */
     public function new(Request $request): Response
     {
@@ -53,6 +58,7 @@ class ChanteurController extends AbstractController
 
     /**
      * @Route("/{id}", name="chanteur_show", methods={"GET"})
+     * permet de voir les détails du chanteur selectionné
      */
     public function show(Chanteur $chanteur): Response
     {
@@ -63,6 +69,7 @@ class ChanteurController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="chanteur_edit", methods={"GET","POST"})
+     * permet d'éditer les détails du chanteur selectionné
      */
     public function edit(Request $request, Chanteur $chanteur): Response
     {
@@ -83,6 +90,7 @@ class ChanteurController extends AbstractController
 
     /**
      * @Route("/{id}", name="chanteur_delete", methods={"POST"})
+     * permet de supprimer le chanteur selectionné
      */
     public function delete(Request $request, Chanteur $chanteur): Response
     {

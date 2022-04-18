@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Contrôleur permettant de gérer l'index
+ */
 namespace App\Controller;
 
 use App\Entity\Client;

@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Contrôleur permettant de gerer l'association chanteurs/festivals
+ */
 namespace App\Controller;
 
 use App\Entity\ChanteurFestival;
@@ -13,11 +15,13 @@ use App\Entity\Chanteur;
 
 /**
  * @Route("/chanteurFestival")
+ * route permettant d'accéder au controleur chanteurFestival
  */
 class ChanteurFestivalController extends AbstractController
 {
     /**
      * @Route("/", name="chanteur_festival_index", methods={"GET"})
+     * affiche un tableau avec toutes les associations chanteurFestival
      */
     public function index(): Response
     {
@@ -42,6 +46,7 @@ class ChanteurFestivalController extends AbstractController
 
     /**
      * @Route("/new", name="chanteur_festival_new", methods={"GET","POST"})
+     * permet de créer une nouvelle association
      */
     public function new(Request $request): Response
     {
@@ -65,6 +70,7 @@ class ChanteurFestivalController extends AbstractController
 
     /**
      * @Route("/{id}", name="chanteur_festival_show", methods={"GET"})
+     * permet de voir les détails de l'assocaiton
      */
     public function show(ChanteurFestival $chanteurFestival): Response
     {
@@ -75,6 +81,7 @@ class ChanteurFestivalController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="chanteur_festival_edit", methods={"GET","POST"})
+     * permet d'éditer l'association
      */
     public function edit(Request $request, ChanteurFestival $chanteurFestival): Response
     {
@@ -95,6 +102,7 @@ class ChanteurFestivalController extends AbstractController
 
     /**
      * @Route("/{id}", name="chanteur_festival_delete", methods={"POST"})
+     * permet de supprimer une association
      */
     public function delete(Request $request, ChanteurFestival $chanteurFestival): Response
     {

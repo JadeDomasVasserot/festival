@@ -1,0 +1,13 @@
+Notes:
+Il faut avoir une version récente de MySql : 
+sinon imossible importer la base en utf8mb4_0900_ai_ci
+Version utilisée : 8.0.26
+
+Documents : 
+Looping
+Fichier SQL
+Projet symfony
+Annexes.txt
+Commandes.txt
+
+Page twig : Inscription rapide

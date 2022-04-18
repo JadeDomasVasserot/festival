@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Contrôleur permettant de gerer les clients
+ */
 namespace App\Controller;
 
 use App\Entity\Client;
@@ -11,11 +13,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/client")
+ * route pour accèder au controleur client
  */
 class ClientController extends AbstractController
 {
     /**
      * @Route("/", name="client_index", methods={"GET"})
+     * Afficher un tableau avec la liste des clients
      */
     public function index(): Response
     {
@@ -30,6 +34,7 @@ class ClientController extends AbstractController
 
     /**
      * @Route("/new", name="client_new", methods={"GET","POST"})
+     * permet de créer un nouveau client
      */
     public function new(Request $request): Response
     {
@@ -53,6 +58,7 @@ class ClientController extends AbstractController
 
     /**
      * @Route("/{id}", name="client_show", methods={"GET"})
+     * permet de voir les détails du client selectionné
      */
     public function show(Client $client): Response
     {
@@ -63,6 +69,7 @@ class ClientController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="client_edit", methods={"GET","POST"})
+     * permet d'éditer les détails du client selectionné
      */
     public function edit(Request $request, Client $client): Response
     {
@@ -83,6 +90,7 @@ class ClientController extends AbstractController
 
     /**
      * @Route("/{id}", name="client_delete", methods={"POST"})
+     * permet de supprimer le client sélectionné
      */
     public function delete(Request $request, Client $client): Response
     {

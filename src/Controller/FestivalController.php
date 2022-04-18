@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Contrôleur permettant de gerer les festivals
+ */
 namespace App\Controller;
 
 use App\Entity\Festival;
@@ -10,12 +12,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/festival")
+ * @Route("/festival")*
+ * Route pour accéder à un contrôleur festival
  */
 class FestivalController extends AbstractController
 {
     /**
      * @Route("/", name="festival_index", methods={"GET"})
+     * affiche un tableau avec tous les festivals
      */
     public function index(): Response
     {
@@ -30,6 +34,7 @@ class FestivalController extends AbstractController
 
     /**
      * @Route("/new", name="festival_new", methods={"GET","POST"})
+     * permet d'ajouter un festival
      */
     public function new(Request $request): Response
     {
@@ -53,6 +58,7 @@ class FestivalController extends AbstractController
 
     /**
      * @Route("/{id}", name="festival_show", methods={"GET"})
+     * permet de voir les détails du festival sélectionnée
      */
     public function show(Festival $festival): Response
     {
@@ -63,6 +69,7 @@ class FestivalController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="festival_edit", methods={"GET","POST"})
+     * permet d'éditer les info d'un festival
      */
     public function edit(Request $request, Festival $festival): Response
     {
@@ -83,6 +90,7 @@ class FestivalController extends AbstractController
 
     /**
      * @Route("/{id}", name="festival_delete", methods={"POST"})
+     * permet de supprimer un festival sélectionné
      */
     public function delete(Request $request, Festival $festival): Response
     {

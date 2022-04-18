@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Contrôleur permettant de gérer les chansons
+ */
 namespace App\Controller;
 
 
@@ -11,11 +13,13 @@ use App\Entity\Chanson;
 use App\Form\ChansonType;
 /**
  * @Route("/chanson")
+ * route pour accéder au contrôleur
  */
 class ChansonController extends AbstractController
 {
     /**
      * @Route("/", name="chanson_index", methods={"GET"})
+     * Affiche un tableau aavec toutes les chansons de la BDD
      */
     public function index(): Response
     {
@@ -30,6 +34,7 @@ class ChansonController extends AbstractController
 
     /**
      * @Route("/new", name="chanson_new", methods={"GET","POST"})
+     * permet de créer une nouvelle chanson
      */
     public function new(Request $request): Response
     {
@@ -53,6 +58,7 @@ class ChansonController extends AbstractController
 
     /**
      * @Route("/{id}", name="chanson_show", methods={"GET"})
+     * permet de voir les détails de la chanson
      */
     public function show(Chanson $chanson): Response
     {
@@ -63,6 +69,7 @@ class ChansonController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="chanson_edit", methods={"GET","POST"})
+     * permet d'éditer la chanson 
      */
     public function edit(Request $request, Chanson $chanson): Response
     {
@@ -83,6 +90,7 @@ class ChansonController extends AbstractController
 
     /**
      * @Route("/{id}", name="chanson_delete", methods={"POST"})
+     * permet de supprimer une chanson
      */
     public function delete(Request $request, Chanson $chanson): Response
     {
